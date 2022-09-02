@@ -5,6 +5,9 @@ public class Vetor {
 	private float soma;
 	private int par = 0;
 	private int impar = 0;
+	private int somaconsoante = 0;
+	private int somavetor;
+	private int multiplicavetor = 1;
 
 	public int[] VetorInteiro(int[] vet) {
 		return vet;
@@ -56,5 +59,50 @@ public class Vetor {
 				System.out.print(" - " + vetimpar[i]);
 			}
 		}
+	}
+	
+	public String MostraConsoante(char vet[]) {
+		StringBuilder saida = new StringBuilder();
+		for(int i = 0; i < vet.length; i++) {
+			if(vet[i] != 'a' && vet[i] != 'e' && vet[i] != 'i' && vet[i] != 'o' && vet[i] != 'u') {
+			saida.append(vet[i]);
+			saida.append(", ");
+			}
+		}
+		return saida.toString();
+	}
+	
+	public String SomaConsoante(char vet[]) {
+		StringBuilder saida = new StringBuilder();
+		for(int i = 0; i < vet.length; i++) {
+			if(vet[i] != 'a' && vet[i] != 'e' && vet[i] != 'i' && vet[i] != 'o' && vet[i] != 'u') {
+			somaconsoante += 1;
+			}
+		}
+		saida.append(somaconsoante);
+		return saida.toString();
+	}
+	
+	public int SomaVetor(int vet[]) {
+		for(int i = 0; i < vet.length; i++) {
+			somavetor += vet[i];
+		}
+		return somavetor;
+	}
+	
+	public int MultiplicaVetor(int vet[]) {
+		for(int i = 0; i < vet.length; i++) {
+			multiplicavetor = multiplicavetor * vet[i];
+		}
+		return multiplicavetor;
+	}
+	
+	public String MostraVetor(int vet[]) {
+		StringBuilder saida = new StringBuilder();
+		for(int i = 0; i < vet.length; i++) {
+			saida.append(vet[i]);
+			saida.append(", ");
+		}
+		return saida.toString();
 	}
 }
