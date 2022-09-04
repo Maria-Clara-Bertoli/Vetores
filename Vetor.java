@@ -1,5 +1,7 @@
 package Vetor;
 
+import java.util.Random;
+
 public class Vetor {
 
 	private float soma;
@@ -8,7 +10,7 @@ public class Vetor {
 	private int somaconsoante = 0;
 	private int somavetor;
 	private int multiplicavetor = 1;
-
+	
 	public int[] VetorInteiro(int[] vet) {
 		return vet;
 	}
@@ -60,49 +62,72 @@ public class Vetor {
 			}
 		}
 	}
-	
+
 	public String MostraConsoante(char vet[]) {
 		StringBuilder saida = new StringBuilder();
-		for(int i = 0; i < vet.length; i++) {
-			if(vet[i] != 'a' && vet[i] != 'e' && vet[i] != 'i' && vet[i] != 'o' && vet[i] != 'u') {
-			saida.append(vet[i]);
-			saida.append(", ");
+		for (int i = 0; i < vet.length; i++) {
+			if (vet[i] != 'a' && vet[i] != 'e' && vet[i] != 'i' && vet[i] != 'o' && vet[i] != 'u') {
+				saida.append(vet[i]);
+				saida.append(", ");
 			}
 		}
 		return saida.toString();
 	}
-	
+
 	public String SomaConsoante(char vet[]) {
 		StringBuilder saida = new StringBuilder();
-		for(int i = 0; i < vet.length; i++) {
-			if(vet[i] != 'a' && vet[i] != 'e' && vet[i] != 'i' && vet[i] != 'o' && vet[i] != 'u') {
-			somaconsoante += 1;
+		for (int i = 0; i < vet.length; i++) {
+			if (vet[i] != 'a' && vet[i] != 'e' && vet[i] != 'i' && vet[i] != 'o' && vet[i] != 'u') {
+				somaconsoante += 1;
 			}
 		}
 		saida.append(somaconsoante);
 		return saida.toString();
 	}
-	
+
 	public int SomaVetor(int vet[]) {
-		for(int i = 0; i < vet.length; i++) {
+		for (int i = 0; i < vet.length; i++) {
 			somavetor += vet[i];
 		}
 		return somavetor;
 	}
-	
+
 	public int MultiplicaVetor(int vet[]) {
-		for(int i = 0; i < vet.length; i++) {
+		for (int i = 0; i < vet.length; i++) {
 			multiplicavetor = multiplicavetor * vet[i];
 		}
 		return multiplicavetor;
 	}
-	
+
 	public String MostraVetor(int vet[]) {
 		StringBuilder saida = new StringBuilder();
-		for(int i = 0; i < vet.length; i++) {
+		for (int i = 0; i < vet.length; i++) {
 			saida.append(vet[i]);
 			saida.append(", ");
 		}
 		return saida.toString();
+	}
+
+	public String[] SeparaNome(int quantidade, String palavra) {
+		String vet[] = new String[quantidade];
+		vet = palavra.split(";");
+		return vet;
+	}
+	
+	public int[] JuntaVetor(int vet[], int vet2[]) {
+		int vet3[] = new int[10];
+		int n = 0;
+		int n2 = 0;
+		for(int i = 0; i < 10; i++) {
+			if(i%2 == 0) {
+				vet3[i] = vet[n];
+				n += 1;
+			}
+			else {
+				vet3[i] = vet2[n2];
+				n2 += 1;
+			}
+		}
+		return vet3;
 	}
 }
